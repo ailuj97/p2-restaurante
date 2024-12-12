@@ -1,0 +1,10 @@
+1;PizzaPizza;102.0;true
+2;Pizza;51.0;true
+3;Nenhum;0.0;true
+4;Nenhum;0.0;true
+5;Nenhum;0.0;true
+6;Nenhum;0.0;true
+7;Nenhum;0.0;true
+8;Nenhum;0.0;true
+9;Nenhum;0.0;true
+10;Nenhum;0.0;true

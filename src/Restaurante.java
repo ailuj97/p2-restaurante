@@ -68,11 +68,12 @@ public class Restaurante {
 
                     String pedidosAtuais = mesas[mesaAdcionarComida].getPedidos();
 
-                    if(pedidosAtuais != "Nenhum") {
+                    if(pedidosAtuais.equals("Nenhum")) {
+                        pedidosAtuais = comida;
+                    } else {
                         pedidosAtuais += ", ";
                     } // Funcionando
 
-                    pedidosAtuais += comida;
                     mesas[mesaAdcionarComida].setPedidos(pedidosAtuais);
 
                     // Ajeitar essas linhas para calcular o preço
