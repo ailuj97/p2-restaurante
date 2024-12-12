@@ -100,26 +100,159 @@ public class ScreenMesaIndividual extends JFrame {
         resumoDoPedido.setBackground(Color.WHITE);
         resumoDoPedido.addActionListener(this:: notaFiscal);
 
+        JLabel operacaoDeSoma = new JLabel("add");
+        operacaoDeSoma.setBounds(450, 0, 500, 100);
+        operacaoDeSoma.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        add(operacaoDeSoma);
+
+        JLabel operacaoDeSub = new JLabel("sub");
+        operacaoDeSub.setBounds(415, 0, 500, 100);
+        operacaoDeSub.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        add(operacaoDeSub);
+
+
+
         JButton somarProdutoUm = new JButton("+");
-        somarProdutoUm.setBounds(450, 60, 20, 20);
+        somarProdutoUm.setBounds(450, 55, 20, 20);
         somarProdutoUm.setFont(new Font("Times New Roman", Font.BOLD, 4));
         somarProdutoUm.setForeground(new Color(0, 0, 0));
         somarProdutoUm.setBackground(Color.WHITE);
         somarProdutoUm.addActionListener(this::somar);
 
         JButton subtrairProdutoUm = new JButton("-");
-        subtrairProdutoUm.setBounds(420, 60, 20, 20);
+        subtrairProdutoUm.setBounds(420, 55, 20, 20);
         subtrairProdutoUm.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoUm.setForeground(new Color(0, 0, 0));
         subtrairProdutoUm.setBackground(Color.WHITE);
         subtrairProdutoUm.addActionListener(this::subtrair);
 
+        JButton somarProdutoDois = new JButton("+");
+        somarProdutoDois.setBounds(450, 75, 20, 20);
+        somarProdutoDois.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        somarProdutoDois.setForeground(new Color(0, 0, 0));
+        somarProdutoDois.setBackground(Color.WHITE);
+        somarProdutoDois.addActionListener(this::somar);
 
+        JButton subtrairProdutoDois = new JButton("-");
+        subtrairProdutoDois.setBounds(420, 75, 20, 20);
+        subtrairProdutoDois.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        subtrairProdutoDois.setForeground(new Color(0, 0, 0));
+        subtrairProdutoDois.setBackground(Color.WHITE);
+        subtrairProdutoDois.addActionListener(this::subtrair);
 
+        JButton somarProdutoTres = new JButton("+");
+        somarProdutoTres.setBounds(450, 95, 20, 20);
+        somarProdutoTres.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        somarProdutoTres.setForeground(new Color(0, 0, 0));
+        somarProdutoTres.setBackground(Color.WHITE);
+        somarProdutoTres.addActionListener(this::somar);
+
+        JButton subtrairProdutoTres = new JButton("-");
+        subtrairProdutoTres.setBounds(420, 95, 20, 20);
+        subtrairProdutoTres.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        subtrairProdutoTres.setForeground(new Color(0, 0, 0));
+        subtrairProdutoTres.setBackground(Color.WHITE);
+        subtrairProdutoTres.addActionListener(this::subtrair);
+
+        JButton somarProdutoQuatro = new JButton("+");
+        somarProdutoQuatro.setBounds(450, 115, 20, 20);
+        somarProdutoQuatro.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        somarProdutoQuatro.setForeground(new Color(0, 0, 0));
+        somarProdutoQuatro.setBackground(Color.WHITE);
+        somarProdutoQuatro.addActionListener(this::somar);
+
+        JButton subtrairProdutoQuatro = new JButton("-");
+        subtrairProdutoQuatro.setBounds(420, 115, 20, 20);
+        subtrairProdutoQuatro.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        subtrairProdutoQuatro.setForeground(new Color(0, 0, 0));
+        subtrairProdutoQuatro.setBackground(Color.WHITE);
+        subtrairProdutoQuatro.addActionListener(this::subtrair);
+
+        JButton somarProdutoCinco = new JButton("+");
+        somarProdutoCinco.setBounds(450, 135, 20, 20);
+        somarProdutoCinco.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        somarProdutoCinco.setForeground(new Color(0, 0, 0));
+        somarProdutoCinco.setBackground(Color.WHITE);
+        somarProdutoCinco.addActionListener(this::somar);
+
+        JButton subtrairProdutoCinco = new JButton("-");
+        subtrairProdutoCinco.setBounds(420, 135, 20, 20);
+        subtrairProdutoCinco.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        subtrairProdutoCinco.setForeground(new Color(0, 0, 0));
+        subtrairProdutoCinco.setBackground(Color.WHITE);
+        subtrairProdutoCinco.addActionListener(this::subtrair);
+
+        JButton somarProdutoSeis = new JButton("+");
+        somarProdutoSeis.setBounds(450, 205, 20, 20);
+        somarProdutoSeis.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        somarProdutoSeis.setForeground(new Color(0, 0, 0));
+        somarProdutoSeis.setBackground(Color.WHITE);
+        somarProdutoSeis.addActionListener(this::somar);
+
+        JButton subtrairProdutoSeis = new JButton("-");
+        subtrairProdutoSeis.setBounds(420, 205, 20, 20);
+        subtrairProdutoSeis.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        subtrairProdutoSeis.setForeground(new Color(0, 0, 0));
+        subtrairProdutoSeis.setBackground(Color.WHITE);
+        subtrairProdutoSeis.addActionListener(this::subtrair);
+
+        JButton somarProdutoSete = new JButton("+");
+        somarProdutoSete.setBounds(450, 225, 20, 20);
+        somarProdutoSete.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        somarProdutoSete.setForeground(new Color(0, 0, 0));
+        somarProdutoSete.setBackground(Color.WHITE);
+        somarProdutoSete.addActionListener(this::somar);
+
+        JButton subtrairProdutoSete = new JButton("-");
+        subtrairProdutoSete.setBounds(420, 225, 20, 20);
+        subtrairProdutoSete.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        subtrairProdutoSete.setForeground(new Color(0, 0, 0));
+        subtrairProdutoSete.setBackground(Color.WHITE);
+        subtrairProdutoSete.addActionListener(this::subtrair);
+
+        JButton somarProdutoOito = new JButton("+");
+        somarProdutoOito.setBounds(450, 245, 20, 20);
+        somarProdutoOito.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        somarProdutoOito.setForeground(new Color(0, 0, 0));
+        somarProdutoOito.setBackground(Color.WHITE);
+        somarProdutoOito.addActionListener(this::somar);
+
+        JButton subtrairProdutoOito = new JButton("-");
+        subtrairProdutoOito.setBounds(420, 245, 20, 20);
+        subtrairProdutoOito.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        subtrairProdutoOito.setForeground(new Color(0, 0, 0));
+        subtrairProdutoOito.setBackground(Color.WHITE);
+        subtrairProdutoOito.addActionListener(this::subtrair);
+
+        add(somarProdutoUm);
+        add(subtrairProdutoUm);
+
+        add(subtrairProdutoDois);
+        add(somarProdutoDois);
+
+        add(subtrairProdutoTres);
+        add(somarProdutoTres);
+
+        add(subtrairProdutoQuatro);
+        add(somarProdutoQuatro);
+
+        add(somarProdutoCinco);
+        add(subtrairProdutoCinco);
+
+        add(subtrairProdutoSeis);
+        add(somarProdutoSeis);
+
+        add(subtrairProdutoSete);
+        add(somarProdutoSete);
+
+        add(subtrairProdutoOito);
+        add(somarProdutoOito);
 
         add(resumoDoPedido);
 
         add(fecharMesa);
+
+        
 
 
 
