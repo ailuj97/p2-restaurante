@@ -24,4 +24,8 @@ public class Comida {
     public void setPreco(double preco) {
         this.preco = preco;
     }
+
+    public void mostrarComida() {
+        System.out.println("Nome: " + nome + " Preco: " + preco);
+    }
 }

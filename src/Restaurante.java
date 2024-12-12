@@ -26,7 +26,7 @@ public class Restaurante {
             mesas[i] = new Mesa(true, "Nenhum", i + 1, 0.0);
         }
         */
-       
+
         System.out.println("-----Menu-----");
         System.out.println("1 - Visualizar Mesas");
         System.out.println("2 - Visualizar Comidas");
@@ -37,7 +37,7 @@ public class Restaurante {
         System.out.println("7 - Tornar todas as mesas descocupadas");
         System.out.println("8 - Zerar os pedidos de todas as mesas");
         System.out.println("9 - Zerar os pedidos de uma mesa");
-        System.out.println("10 - Salvar os dados"); // tentar salvar com txt , salvar mesas e carregar mesas
+       // Ver se deixa ou tira  System.out.println("10 - Salvar os dados"); // tentar salvar com txt , salvar mesas e carregar mesas
         System.out.print("Digite sua opção aqui: ");
 
 
@@ -60,19 +60,31 @@ public class Restaurante {
 
                 case 3:// Adcionar comida na mesa
                     System.out.println("Digite o número da mesa: ");
-                    int mesaAdcionarComida = sc.nextInt();
+                    int mesaAdcionarComida = sc.nextInt() - 1;
                     System.out.println("Digite o nome da comida: ");
                     sc.nextLine();
                     String comida = sc.nextLine();
 
+                    String pedidosAtuais = mesas[mesaAdcionarComida].getPedidos();
 
-                    for (Comida comidaAdcionarMesa : comidas) {
+                    if(pedidosAtuais != "Nenhum") {
+                        pedidosAtuais += ", ";
+                    } // Funcionando
+
+                    pedidosAtuais += comida;
+                    mesas[mesaAdcionarComida].setPedidos(pedidosAtuais);
+
+                    // Ajeitar essas linhas para calcular o preço
+                    double precoAtual = mesas[mesaAdcionarComida].getPreco();
+                    mesas[mesaAdcionarComida].setPreco(precoAtual + mesas[mesaAdcionarComida].getPreco());
+
+                    /*for (Comida comidaAdcionarMesa : comidas) {
                         if (comidaAdcionarMesa.getNome().equals(comida)) {
                             mesas[mesaAdcionarComida].setPedidos(comida);
                             mesas[mesaAdcionarComida].setPreco(comidaAdcionarMesa.getPreco());
                             mesas[mesaAdcionarComida].mostrarMesa();
                         }
-                    }
+                    }*/
 
                     SalvarDados.salvarMesas(mesas);
 
@@ -90,13 +102,13 @@ public class Restaurante {
 
                 case 5:// Visualizar mesa escolhida
                     System.out.println("Digite a mesa escolhida: ");
-                    int mesaEscolha = sc.nextInt();
+                    int mesaEscolha = sc.nextInt() - 1;
                     mesas[mesaEscolha].mostrarMesa();
                     break;
 
                 case 6: // Ocupar mesa
                     System.out.println("Digite a mesa escolhida: ");
-                    int mesaOcupar = sc.nextInt();
+                    int mesaOcupar = sc.nextInt() - 1;
                     mesas[mesaOcupar].setDisponibilidade(false);
                     SalvarDados.salvarMesas(mesas);
                     break;
@@ -120,7 +132,7 @@ public class Restaurante {
 
                 case 9: // Zerar os pedidos de uma mesa
                     System.out.println("Digite a mesa escolhida: ");
-                    int mesaEscolhida = sc.nextInt();
+                    int mesaEscolhida = sc.nextInt() - 1;
                     mesas[mesaEscolhida].setPedidos("Nenhum");
                     mesas[mesaEscolhida].setPreco(0.0);
                     SalvarDados.salvarMesas(mesas);
