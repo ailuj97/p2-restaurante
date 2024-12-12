@@ -65,6 +65,7 @@ public class Restaurante {
                     sc.nextLine();
                     String comida = sc.nextLine();
 
+
                     String pedidosAtuais = mesas[mesaAdcionarComida].getPedidos();
 
                     if(pedidosAtuais != "Nenhum") {
@@ -75,8 +76,12 @@ public class Restaurante {
                     mesas[mesaAdcionarComida].setPedidos(pedidosAtuais);
 
                     // Ajeitar essas linhas para calcular o preço
-                    double precoAtual = mesas[mesaAdcionarComida].getPreco();
-                    mesas[mesaAdcionarComida].setPreco(precoAtual + mesas[mesaAdcionarComida].getPreco());
+                    for(Comida comida1 : comidas) {
+                        if(comida1.getNome().equals(comida)) {
+                            double precoAtual = mesas[mesaAdcionarComida].getPreco();
+                            mesas[mesaAdcionarComida].setPreco(precoAtual + comida1.getPreco());
+                        }
+                    }
 
                     /*for (Comida comidaAdcionarMesa : comidas) {
                         if (comidaAdcionarMesa.getNome().equals(comida)) {
