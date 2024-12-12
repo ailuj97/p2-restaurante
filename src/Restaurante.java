@@ -1,10 +1,11 @@
 import entidades.Comida;
 import entidades.Mesa;
+import metodos.SalvarDados;
 import java.util.Scanner;
 import java.io.*;
 
 public class Restaurante {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
 
         Comida[] comidas = new Comida[8];
@@ -17,11 +18,15 @@ public class Restaurante {
         comidas[6] = new Comida(6.50, "Suco de Laranja");
         comidas[7] = new Comida(2.00, "Água Mineral");
 
-        Mesa[] mesas = new Mesa[10];
+        // Carregando as mesas
+        Mesa [] mesas = SalvarDados.carregarMesas();
+
+        /*Mesa[] mesas = new Mesa[10];
         for (int i = 0; i <= 9; i++) {
             mesas[i] = new Mesa(true, "Nenhum", i + 1, 0.0);
         }
-
+        */
+       
         System.out.println("-----Menu-----");
         System.out.println("1 - Visualizar Mesas");
         System.out.println("2 - Visualizar Comidas");
@@ -32,7 +37,7 @@ public class Restaurante {
         System.out.println("7 - Tornar todas as mesas descocupadas");
         System.out.println("8 - Zerar os pedidos de todas as mesas");
         System.out.println("9 - Zerar os pedidos de uma mesa");
-        System.out.println("10 - Salvar os dados"); // tentar salvar com txt
+        System.out.println("10 - Salvar os dados"); // tentar salvar com txt , salvar mesas e carregar mesas
         System.out.print("Digite sua opção aqui: ");
 
 
@@ -68,6 +73,9 @@ public class Restaurante {
                             mesas[mesaAdcionarComida].mostrarMesa();
                         }
                     }
+
+                    SalvarDados.salvarMesas(mesas);
+
                     break;
 
                 case 4:// Mostrar mesas ocupadas
@@ -82,14 +90,15 @@ public class Restaurante {
 
                 case 5:// Visualizar mesa escolhida
                     System.out.println("Digite a mesa escolhida: ");
-                    int mesaOcupar = sc.nextInt();
-                    mesas[mesaOcupar].mostrarMesa();
+                    int mesaEscolha = sc.nextInt();
+                    mesas[mesaEscolha].mostrarMesa();
                     break;
 
                 case 6: // Ocupar mesa
                     System.out.println("Digite a mesa escolhida: ");
-                    int mesaEscolha = sc.nextInt();
-                    mesas[mesaEscolha].setDisponibilidade(false);
+                    int mesaOcupar = sc.nextInt();
+                    mesas[mesaOcupar].setDisponibilidade(false);
+                    SalvarDados.salvarMesas(mesas);
                     break;
 
                 case 7: // Tornar todas as mesas descocupadas
@@ -97,21 +106,30 @@ public class Restaurante {
                     for (Mesa mesa : mesas) {
                         mesa.setDisponibilidade(true);
                     }
+                    SalvarDados.salvarMesas(mesas);
                     break;
 
                 case 8:// Zerar os pedidos de todas as mesas
                     System.out.println("Zerando todos os pedidos");
                     for (Mesa mesa : mesas) {
                         mesa.setPedidos("Nenhum");
+                        mesa.setPreco(0.0);
                     }
+                    SalvarDados.salvarMesas(mesas);
                     break;
 
-                case 9:
+                case 9: // Zerar os pedidos de uma mesa
                     System.out.println("Digite a mesa escolhida: ");
                     int mesaEscolhida = sc.nextInt();
                     mesas[mesaEscolhida].setPedidos("Nenhum");
+                    mesas[mesaEscolhida].setPreco(0.0);
+                    SalvarDados.salvarMesas(mesas);
                     break;
 
+                case 10:// salvar mesas em um txt
+                    SalvarDados.salvarMesas(mesas);
+                    System.out.println("Dados salvos, saindo.");
+                    return;
                 default:
                     System.out.println("Opção Inválida");
             }
