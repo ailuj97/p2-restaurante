@@ -31,7 +31,7 @@ public class ScreenMesas extends JFrame{
 
         add(fecharRestaurante);
 
-        JButton voltar = new JButton("Voltar");
+        JButton voltar = new JButton("<");
         voltar.setBounds(0,0,65,24);
         voltar.setFont(new Font("Times New Roman", Font.BOLD, 15));
         voltar.setForeground(new Color(0, 0, 0));
@@ -135,15 +135,11 @@ public class ScreenMesas extends JFrame{
 
         add(mesaDez);
 
-
         mesaDez.addActionListener(this::mesaIndividual);
-
-
 
         voltar.addActionListener(this:: voltar);
 
         add(voltar);
-
 
     }
 

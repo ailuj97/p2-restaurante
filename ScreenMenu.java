@@ -48,16 +48,6 @@ public class ScreenMenu extends JFrame{
         titulo.setBounds(240, 50, 400, 100);
         titulo.setFont(new Font("Times New Roman", Font.BOLD, 50));
         add(titulo);
-
-
-        /*ImageIcon rest = new ImageIcon("\"C:\\Users\\glauc\\CrossDevice\\A71 de Glauco\\storage\\Download\\desenho-restaurante-bonito_23-2147567265.avif\"");
-        JLabel label = new JLabel(rest);
-        label.setBounds(270, 50, 400, 100);
-        add(label);
-        label.setVisible(true);*/
-
-
-
     }
 
     private void mapa(ActionEvent actionEvent) {

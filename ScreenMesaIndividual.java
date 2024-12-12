@@ -16,7 +16,7 @@ public class ScreenMesaIndividual extends JFrame {
 
         setLayout(null);
 
-        JButton voltar = new JButton("Voltar");
+        JButton voltar = new JButton("<");
         voltar.setBounds(0, 0, 65, 24);
         voltar.setFont(new Font("Times New Roman", Font.BOLD, 15));
         voltar.setForeground(new Color(0, 0, 0));
@@ -27,10 +27,10 @@ public class ScreenMesaIndividual extends JFrame {
 
         //PRODUTOS NO CARDAPIO
 
-        JLabel cabecalioUm = new JLabel("Refeições");
-        cabecalioUm.setBounds(30, -10, 500, 100);
-        cabecalioUm.setFont(new Font("Times New Roman", Font.ITALIC, 30));
-        add(cabecalioUm);
+        JLabel cabecalhoUm = new JLabel("Refeições");
+        cabecalhoUm.setBounds(30, -10, 500, 100);
+        cabecalhoUm.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        add(cabecalhoUm);
 
         JLabel produtoUm = new JLabel("Pizza ...................................................... R$ 25,50");
         produtoUm.setBounds(30, 20, 500, 100);
@@ -57,22 +57,22 @@ public class ScreenMesaIndividual extends JFrame {
         produtoCinco.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         add(produtoCinco);
 
-        JLabel cabecalioDois = new JLabel("Bebidas");
-        cabecalioDois.setBounds(30, 140, 500, 100);
-        cabecalioDois.setFont(new Font("Times New Roman", Font.ITALIC, 30));
-        add(cabecalioDois);
+        JLabel cabecalhoDois = new JLabel("Bebidas");
+        cabecalhoDois.setBounds(30, 140, 500, 100);
+        cabecalhoDois.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        add(cabecalhoDois);
 
-        JLabel produtoSeis = new JLabel("Coca-Cola .............................................. R$ 18,25");
+        JLabel produtoSeis = new JLabel("Coca-Cola .............................................. R$ 5,00");
         produtoSeis.setBounds(30, 170, 500, 100);
         produtoSeis.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         add(produtoSeis);
 
-        JLabel produtoSete = new JLabel("Suco de Laranja ..................................... R$ 18,25");
+        JLabel produtoSete = new JLabel("Suco de Laranja ..................................... R$ 6,50");
         produtoSete.setBounds(30, 190, 500, 100);
         produtoSete.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         add(produtoSete);
 
-        JLabel produtoOito = new JLabel("Água Mineral.......................................... R$ 18,25");
+        JLabel produtoOito = new JLabel("Água Mineral.......................................... R$ 2,00");
         produtoOito.setBounds(30, 210, 500, 100);
         produtoOito.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         add(produtoOito);
@@ -100,8 +100,24 @@ public class ScreenMesaIndividual extends JFrame {
         resumoDoPedido.setBackground(Color.WHITE);
         resumoDoPedido.addActionListener(this:: notaFiscal);
 
-        add(resumoDoPedido);
+        JButton somarProdutoUm = new JButton("+");
+        somarProdutoUm.setBounds(450, 60, 20, 20);
+        somarProdutoUm.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        somarProdutoUm.setForeground(new Color(0, 0, 0));
+        somarProdutoUm.setBackground(Color.WHITE);
+        somarProdutoUm.addActionListener(this::somar);
 
+        JButton subtrairProdutoUm = new JButton("-");
+        subtrairProdutoUm.setBounds(420, 60, 20, 20);
+        subtrairProdutoUm.setFont(new Font("Times New Roman", Font.BOLD, 4));
+        subtrairProdutoUm.setForeground(new Color(0, 0, 0));
+        subtrairProdutoUm.setBackground(Color.WHITE);
+        subtrairProdutoUm.addActionListener(this::subtrair);
+
+
+
+
+        add(resumoDoPedido);
 
         add(fecharMesa);
 
@@ -109,22 +125,7 @@ public class ScreenMesaIndividual extends JFrame {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         //BOTOES COM OS METODOS DE ADICIONAR E RETIRAR PRODUTOS
-
-
-
-
 
     }
 
@@ -145,6 +146,11 @@ public class ScreenMesaIndividual extends JFrame {
         //AQUI VAI O CÓDIGO DO TOSTRING DOS PEDIDOS, FAZENDO UMA ESPECIE DE NOTA FISCAL
     }
 
+    private void somar(ActionEvent actionEvent){
+        //AQUI VAI O CODIGO PRA ADICIONAR PEDIDOS
+    }
 
-
-}
+    private void subtrair(ActionEvent actionEvent){
+        //AQUI VAI O CODIGO PRA ADICIONAR PEDIDOS
+    }
+    }
