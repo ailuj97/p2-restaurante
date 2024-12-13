@@ -133,6 +133,7 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoUm.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoUm.setForeground(new Color(0, 0, 0));
         subtrairProdutoUm.setBackground(Color.WHITE);
+        subtrairProdutoUm.setActionCommand("1");
         subtrairProdutoUm.addActionListener(this::subtrair);
 
         JButton somarProdutoDois = new JButton("+");
@@ -148,6 +149,7 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoDois.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoDois.setForeground(new Color(0, 0, 0));
         subtrairProdutoDois.setBackground(Color.WHITE);
+        subtrairProdutoDois.setActionCommand("2");
         subtrairProdutoDois.addActionListener(this::subtrair);
 
         JButton somarProdutoTres = new JButton("+");
@@ -163,6 +165,7 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoTres.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoTres.setForeground(new Color(0, 0, 0));
         subtrairProdutoTres.setBackground(Color.WHITE);
+        subtrairProdutoTres.setActionCommand("3");
         subtrairProdutoTres.addActionListener(this::subtrair);
 
         JButton somarProdutoQuatro = new JButton("+");
@@ -178,6 +181,7 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoQuatro.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoQuatro.setForeground(new Color(0, 0, 0));
         subtrairProdutoQuatro.setBackground(Color.WHITE);
+        subtrairProdutoQuatro.setActionCommand("4");
         subtrairProdutoQuatro.addActionListener(this::subtrair);
 
         JButton somarProdutoCinco = new JButton("+");
@@ -193,6 +197,7 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoCinco.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoCinco.setForeground(new Color(0, 0, 0));
         subtrairProdutoCinco.setBackground(Color.WHITE);
+        subtrairProdutoCinco.setActionCommand("5");
         subtrairProdutoCinco.addActionListener(this::subtrair);
 
         JButton somarProdutoSeis = new JButton("+");
@@ -208,6 +213,7 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoSeis.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoSeis.setForeground(new Color(0, 0, 0));
         subtrairProdutoSeis.setBackground(Color.WHITE);
+        subtrairProdutoSeis.setActionCommand("6");
         subtrairProdutoSeis.addActionListener(this::subtrair);
 
         JButton somarProdutoSete = new JButton("+");
@@ -223,6 +229,7 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoSete.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoSete.setForeground(new Color(0, 0, 0));
         subtrairProdutoSete.setBackground(Color.WHITE);
+        subtrairProdutoSete.setActionCommand("7");
         subtrairProdutoSete.addActionListener(this::subtrair);
 
         JButton somarProdutoOito = new JButton("+");
@@ -238,6 +245,7 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoOito.setFont(new Font("Times New Roman", Font.BOLD, 4));
         subtrairProdutoOito.setForeground(new Color(0, 0, 0));
         subtrairProdutoOito.setBackground(Color.WHITE);
+        subtrairProdutoOito.setActionCommand("8");
         subtrairProdutoOito.addActionListener(this::subtrair);
 
         add(subtrairProdutoUm);
@@ -301,6 +309,9 @@ public class ScreenMesaIndividual extends JFrame {
     }
 
     private void subtrair(ActionEvent actionEvent){
-        //AQUI VAI O CODIGO PRA ADICIONAR PEDIDOS
+        String actionCommand = actionEvent.getActionCommand();
+        int numeroProduto = Integer.parseInt(actionCommand);
+
+        controller.removerComidaMesa(numeroMesa, numeroProduto);
     }
     }

@@ -72,6 +72,17 @@ public class RestauranteController {
         }
     }
 
+    public void removerComidaMesa(int numMesa, int numComida) {
+        int mesaIndex = numMesa - 1;
+        int comidaIndex = numComida -1 ;
+
+        for (Comida comida : comidas) {
+            double precoAtual = mesas[mesaIndex].getPreco();
+            mesas[mesaIndex].setPreco(precoAtual - comida.getPreco());
+            break;
+        }
+    }
+
     public void visualizarMesaEspecifica(int num) {
         int mesaIndex = num - 1;
         mesas[mesaIndex].mostrarMesa();
