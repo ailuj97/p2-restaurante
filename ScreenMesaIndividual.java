@@ -224,6 +224,15 @@ public class ScreenMesaIndividual extends JFrame {
         subtrairProdutoOito.setBackground(Color.WHITE);
         subtrairProdutoOito.addActionListener(this::subtrair);
 
+        JButton totalDoPedido = new JButton("Resumo do pedido");
+        totalDoPedido.setBounds(370, 430, 160, 20);
+        totalDoPedido.setFont(new Font("Times New Roman", Font.BOLD, 15));
+        totalDoPedido.setForeground(new Color(0, 0, 0));
+        totalDoPedido.setBackground(Color.WHITE);
+        totalDoPedido.addActionListener(this:: notaFiscal);
+
+        add(totalDoPedido);
+
         add(somarProdutoUm);
         add(subtrairProdutoUm);
 
@@ -252,12 +261,6 @@ public class ScreenMesaIndividual extends JFrame {
 
         add(fecharMesa);
 
-        
-
-
-
-
-
         //BOTOES COM OS METODOS DE ADICIONAR E RETIRAR PRODUTOS
 
     }
@@ -276,6 +279,7 @@ public class ScreenMesaIndividual extends JFrame {
     }
 
     private void notaFiscal(ActionEvent actionEvent) {
+
         //AQUI VAI O CÓDIGO DO TOSTRING DOS PEDIDOS, FAZENDO UMA ESPECIE DE NOTA FISCAL
     }
 
@@ -286,4 +290,5 @@ public class ScreenMesaIndividual extends JFrame {
     private void subtrair(ActionEvent actionEvent){
         //AQUI VAI O CODIGO PRA ADICIONAR PEDIDOS
     }
+
     }
