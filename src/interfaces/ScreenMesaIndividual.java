@@ -94,15 +94,8 @@ public class ScreenMesaIndividual extends JFrame {
 
         add(finalizarPedido);
 
-        JButton fecharMesa = new JButton("Fechar Mesa");
-        fecharMesa.setBounds(200, 430, 160, 20);
-        fecharMesa.setFont(new Font("Times New Roman", Font.BOLD, 15));
-        fecharMesa.setForeground(new Color(0, 0, 0));
-        fecharMesa.setBackground(Color.WHITE);
-        fecharMesa.addActionListener(this:: fecharMesa);
-
         JButton resumoDoPedido = new JButton("Nota Fiscal");
-        resumoDoPedido.setBounds(400, 430, 160, 20);
+        resumoDoPedido.setBounds(200, 430, 160, 20);
         resumoDoPedido.setFont(new Font("Times New Roman", Font.BOLD, 15));
         resumoDoPedido.setForeground(new Color(0, 0, 0));
         resumoDoPedido.setBackground(Color.WHITE);
@@ -274,10 +267,6 @@ public class ScreenMesaIndividual extends JFrame {
 
         add(resumoDoPedido);
 
-        add(fecharMesa);
-
-        add(resumoDoPedido);
-
         //BOTOES COM OS METODOS DE ADICIONAR E RETIRAR PRODUTOS
     }
 
@@ -287,11 +276,7 @@ public class ScreenMesaIndividual extends JFrame {
     }
 
     private void finalizarPedido(ActionEvent actionEvent) {
-
-    }
-
-    private void fecharMesa(ActionEvent actionEvent) {
-        //AQUI VAI O CÓDIGO QUE FECHA A MESA
+        controller.zerarPedidosMesa(numeroMesa);
     }
 
     private void notaFiscal(ActionEvent actionEvent) {

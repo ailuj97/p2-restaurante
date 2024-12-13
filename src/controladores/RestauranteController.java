@@ -77,9 +77,11 @@ public class RestauranteController {
         int comidaIndex = numComida -1 ;
 
         for (Comida comida : comidas) {
-            double precoAtual = mesas[mesaIndex].getPreco();
-            mesas[mesaIndex].setPreco(precoAtual - comida.getPreco());
-            break;
+            if (comida == comidas[comidaIndex]) {
+                double precoAtual = mesas[mesaIndex].getPreco();
+                mesas[mesaIndex].setPreco(precoAtual - comida.getPreco());
+                break;
+            }
         }
     }
 
