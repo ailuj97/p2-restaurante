@@ -279,6 +279,10 @@ public class ScreenMesaIndividual extends JFrame {
     }
 
     private void notaFiscal(ActionEvent actionEvent) {
+        JOptionPane.showMessageDialog(null, "Total da conta:\n" +
+                    "R$ %.2f");
+        //formata a parte do float com o valor 
+
 
         //AQUI VAI O CÓDIGO DO TOSTRING DOS PEDIDOS, FAZENDO UMA ESPECIE DE NOTA FISCAL
     }
